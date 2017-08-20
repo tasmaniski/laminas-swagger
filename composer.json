@@ -1,7 +1,7 @@
 {
   "name":              "tasmaniski/zend-swagger",
   "description":       "Swagger doc for API.",
-  "type":              "zf3 module",
+  "type":              "zf3-module",
   "keywords":          ["zf3", "swagger-doc", "api"],
   "homepage":          "https://github.com/tasmaniski/zend-swagger",
   "authors": [
