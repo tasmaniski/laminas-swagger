@@ -1,0 +1,18 @@
+<?php
+
+return [
+    'swagger' => [
+        /** Just put paths to API annotated controllers with  */
+        'paths'            => [
+            __DIR__ . '/../../module/Api/src/Api/Controller',
+        ],
+
+        'resource_options' => [
+            'output'                => 'array',
+            'json_pretty_print'     => true, // for outputtype 'json'
+            'defaultBasePath'       => null,
+            'defaultApiVersion'     => null,
+            'defaultSwaggerVersion' => '1.2',
+        ],
+    ]
+];

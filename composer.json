@@ -1,0 +1,25 @@
+{
+  "name":              "tasmaniski/zend-swagger",
+  "description":       "Swagger doc for API.",
+  "type":              "zf3 module",
+  "keywords":          ["zf3", "swagger-doc", "api"],
+  "homepage":          "https://github.com/tasmaniski/zend-swagger",
+  "authors": [
+    {
+      "name":     "Aleksandar Varnicic",
+      "email":    "tasmaniski@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^5.6 || ^7.0",
+    "zendframework/zend-mvc": "^3.0.1"
+  },
+  "autoload": {
+    "psr-0": {
+      "ZendSwagger": "src/"
+    },
+    "classmap": [
+      "src/"
+    ]
+  }
+}
