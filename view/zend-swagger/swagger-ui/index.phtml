@@ -38,8 +38,6 @@
                         hljs.highlightBlock(e)
                     });
 
-                    addApiKeyAuthorization();
-
                     $(".endpoints").css("display", "block");
                 },
                 onFailure: function (data) {
@@ -54,8 +52,15 @@
             });
 
             function addApiKeyAuthorization() {
-
+              var apitoken = $('#api_token').val() && $('#api_token')[0].value;
+              if (apitoken && apitoken.trim() != "") {
+                var apitokenKey = new SwaggerClient.ApiKeyAuthorization("Authorization", 'Bearer ' + apitoken, "header");
+                window.swaggerUi.api.clientAuthorizations.add("Authorization", apitokenKey);
+              }
             }
+
+            $('#api_token').keyup(addApiKeyAuthorization);
+            $(document).on('click', '.submit', addApiKeyAuthorization);
 
             window.swaggerUi.load();
         });
