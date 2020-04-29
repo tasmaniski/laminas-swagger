@@ -1,9 +1,9 @@
 <?php
 
-namespace ZendSwagger\Controller;
+namespace LaminasSwagger\Controller;
 
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\JsonModel;
+use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\View\Model\JsonModel;
 use Swagger\Swagger;
 
 class SwaggerDocController extends AbstractActionController
