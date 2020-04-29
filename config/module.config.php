@@ -1,41 +1,42 @@
 <?php
+
 return [
     'controllers'  => [
-        'factories'  => [
-            'ZendSwagger\Controller\SwaggerDoc' => 'ZendSwagger\Factory\Controller\SwaggerDocControllerFactory',
-            'ZendSwagger\Controller\SwaggerUi'  => 'ZendSwagger\Factory\Controller\SwaggerUiControllerFactory',
-        ]
+        'factories' => [
+            LaminasSwagger\Controller\SwaggerDocController::class => LaminasSwagger\Factory\Controller\SwaggerDocControllerFactory::class,
+            LaminasSwagger\Controller\SwaggerUiController::class  => LaminasSwagger\Factory\Controller\SwaggerUiControllerFactory::class,
+        ],
     ],
-    'view_manager' => [
-        'template_path_stack' => [__DIR__ . '/../view'],
-        'strategies'          => ['ViewJsonStrategy'],
-    ],
-    'router' => [
+    'router'       => [
         'routes' => [
-            'swagger-resources' => [
+            'swagger-resources'       => [
                 'type'    => 'Literal',
                 'options' => [
                     'route'    => '/api/docs',
-                    'defaults' => ['controller' => 'ZendSwagger\Controller\SwaggerDoc', 'action' => 'display']
-                ]
+                    'defaults' => ['controller' => LaminasSwagger\Controller\SwaggerDocController::class, 'action' => 'display'],
+                ],
             ],
             'swagger-resource-detail' => [
                 'type'    => 'Segment',
                 'options' => [
                     'route'    => '/api/docs/:resource',
-                    'defaults' => ['controller' => 'ZendSwagger\Controller\SwaggerDoc', 'action' => 'details']
-                ]
+                    'defaults' => ['controller' => LaminasSwagger\Controller\SwaggerDocController::class, 'action' => 'details'],
+                ],
             ],
-            'swagger-ui' => [
+            'swagger-ui'              => [
                 'type'    => 'Literal',
                 'options' => [
                     'route'    => '/api/doc',
                     'defaults' => [
-                        'controller' => 'ZendSwagger\Controller\SwaggerUi',
-                        'action'     => 'index'
-                    ]
-                ]
-            ]
-        ]
-    ]
+                        'controller' => LaminasSwagger\Controller\SwaggerUiController::class,
+                        'action'     => 'index',
+                    ],
+                ],
+            ],
+        ],
+    ],
+    'view_manager' => [
+        'template_path_stack' => [__DIR__ . '/../view'],
+        'strategies'          => ['ViewJsonStrategy'],
+    ],
 ];

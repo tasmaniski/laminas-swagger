@@ -1,25 +1,30 @@
 {
-  "name":              "tasmaniski/zend-swagger",
-  "description":       "Swagger doc for API.",
-  "type":              "zf3-module",
-  "keywords":          ["zf3", "swagger-doc", "api"],
-  "homepage":          "https://github.com/tasmaniski/zend-swagger",
-  "authors": [
-    {
-      "name":     "Aleksandar Varnicic",
-      "email":    "tasmaniski@gmail.com"
-    }
-  ],
-  "require": {
-    "php": "^5.6 || ^7.0",
-    "zendframework/zend-mvc": "^3.0.1"
-  },
-  "autoload": {
-    "psr-0": {
-      "ZendSwagger": "src/"
+    "name": "tasmaniski/laminas-swagger",
+    "description": "Swagger doc for API.",
+    "type": "laminas-module",
+    "keywords": [
+        "zf3",
+        "swagger-doc",
+        "api"
+    ],
+    "homepage": "https://github.com/tasmaniski/laminas-swagger",
+    "authors": [
+        {
+            "name": "Aleksandar Varnicic",
+            "email": "tasmaniski@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^5.6 || ^7.0",
+        "laminas/laminas-mvc": "^3.0.1",
+        "laminas/laminas-dependency-plugin": "^1.0"
     },
-    "classmap": [
-      "src/"
-    ]
-  }
+    "autoload": {
+        "psr-0": {
+            "LaminasSwagger": "src/"
+        },
+        "classmap": [
+            "src/"
+        ]
+    }
 }
